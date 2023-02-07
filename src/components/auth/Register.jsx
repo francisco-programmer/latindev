@@ -6,16 +6,21 @@ import {
     RiEyeLine,
     RiEyeOffLine,
   } from "react-icons/ri";
-  import {FormattedMessage} from 'react-intl';
-import RegisterGithub from "./RegisterGithub";
+import {FormattedMessage} from 'react-intl';
+;
+import {signUpWithEmail, updateProfile, supabase} from '../supabase'
+import MagicLink from "./MagicLink";
 
   
 
 export default function Register() {
-    
 
-const [showPassword, setShowPassword] = useState(false);
+  
   const [showModal, setShowModal] = React.useState(false);
+
+
+  
+
   return (
     <>
       <button
@@ -55,52 +60,16 @@ const [showPassword, setShowPassword] = useState(false);
                       <AiFillLinkedin className="text-xl" />
                       Ingresa con LinkedIn
                     </button>
-                   <RegisterGithub />
 
-                    <div className="flex flex-col gap-4 p-3 ">
-                      <div className="relative">
-                        <RiMailLine className="absolute top-1/2 -translate-y-1/2 left-2 text-sky-500" />
-                        <input
-                          type="email"
-                          className="py-2 pl-8 pr-4 bg-secondary-900 w-full  rounded-lg"
-                          placeholder="Correo electrónico"
-                        />
-                      </div>
-                      <div className="relative ">
-                        <RiLockLine className="absolute top-1/2 -translate-y-1/2 left-2 text-sky-500" />
-                        <input
-                          type={showPassword ? "text" : "password"}
-                          className="py-3 px-8 bg-secondary-900 w-full  rounded-lg"
-                          
-                          placeholder="Contraseña"
-                        />
-                        {showPassword ? (
-                          <RiEyeOffLine
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute top-1/2 -translate-y-1/2  right-2 hover:cursor-pointer text-sky-500"
-                          />
-                        ) : (
-                          <RiEyeLine
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute top-1/2 -translate-y-1/2 right-2 hover:cursor-pointer  text-sky-500"
-                          />
-                        )}
-                      </div>
-                    </div>
-                    <button
-                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg  mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Entrar
-                    </button>
+                    {/* formulario email y password */}
+                   <MagicLink />
                   </div>
                 </div>
                 {/*footer*/}
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
     </>

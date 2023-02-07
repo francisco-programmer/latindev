@@ -10,6 +10,7 @@ import { LangProvider } from './components/context/LanguageContext';
 import Dashboard from './components/dashboard/Dashboard';
 
 const router = createBrowserRouter([
+
   {
     path: "/",
     element: <App />,

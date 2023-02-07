@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl'
 const Presentation = () => {
   return (
     <div className="mt-20">
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-5  '>
         <h1 className="sm:text-5xl text-3xl text-center font-bold text-white font-poppins ">
           <FormattedMessage id="presentacion"
           defaultMessage="La Mejor Red de empleabilidad del sector IT" />
