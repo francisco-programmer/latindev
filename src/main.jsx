@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { LangProvider } from './components/context/LanguageContext';
-import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from './pages/Dashboard';
 
 const router = createBrowserRouter([
 
